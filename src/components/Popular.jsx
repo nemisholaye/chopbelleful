@@ -12,10 +12,11 @@ const [popular, setPopular] = useState ([]);
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
         const data = await api.json();
         setPopular(data.recipes);
-    }
+    };
 
 
-  return <div>
+  return (
+  <div>
     {popular.map((recipe) => {
         return(
             <div key={recipe.id}>
@@ -23,9 +24,9 @@ const [popular, setPopular] = useState ([]);
             </div>
         );
     })}
-  </div>;
+  </div>
+  );
 }
-
 
 
 export default Popular;
