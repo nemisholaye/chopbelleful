@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
-function Breakfast() {
+function Popular() {
 
 const [popular, setPopular] = useState ([]);
 
@@ -25,4 +26,6 @@ const [popular, setPopular] = useState ([]);
   </div>;
 }
 
-export default Breakfast;
+
+
+export default Popular;
