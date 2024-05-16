@@ -26,8 +26,8 @@ const [popular, setPopular] = useState ([]);
                     return(
                         <Card>
                             <p>{recipe.title}</p>
+                            <img src={recipe.image} alt={recipe.title} />
                         </Card>
-
                     );
                 })}
             </Wrapper>
@@ -45,4 +45,6 @@ const Card = styled.div`
 min-height: 12rem;
 border-radius: 2rem;
 `;
+
+
 export default Popular;
