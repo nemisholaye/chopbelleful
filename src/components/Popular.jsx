@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 function Popular() {
@@ -44,6 +44,14 @@ margin: 4rem 0rem;
 const Card = styled.div`
 min-height: 12rem;
 border-radius: 2rem;
+overflow: hidden;
+
+img{
+    border-radius: 2rem;
+}
+
+
+
 `;
 
 
