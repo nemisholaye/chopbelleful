@@ -1,11 +1,15 @@
-import React from 'react'
+
 
 function Breakfast() {
-  return (
-    <div>
-      Breakfast
-    </div>
-  )
+
+    const getPopular = async () => {
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
+        const data = await api.json();
+        console.log(data);
+    }
+
+
+  return <div>Breakfast</div>;
 }
 
-export default Breakfast
+export default Breakfast;
