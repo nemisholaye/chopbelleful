@@ -1,9 +1,9 @@
-function Popular() {
+function Breakfast() {
     return (
       <div>
-        Popular
+        breakfast
       </div>
     )
   }
   
-  export default Popular
+  export default Breakfast
