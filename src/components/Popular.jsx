@@ -1,5 +1,7 @@
  import { useEffect, useState } from "react";
 import styled from "styled-components";
+import {Splide, SplideSlide} from '@splidejs/react-splide';
+import "@splidejs/splide/dist/css/splide.min.css";
 
 function Popular() {
 
@@ -18,21 +20,26 @@ const [popular, setPopular] = useState ([]);
 
   return (
   <div>
-    {popular.map((recipe) => {
-        return(
             <Wrapper>
                 <h3>Popular</h3>
+
+                <Splide options={{
+                    perPage:3,
+                    pagination: false,
+                    gap: "2rem",
+                }}>
                 {popular.map((recipe) => {
                     return(
+                        <SplideSlide>
                         <Card>
                             <p>{recipe.title}</p>
                             <img src={recipe.image} alt={recipe.title} />
                         </Card>
+                        </SplideSlide>
                     );
                 })}
+                </Splide>
             </Wrapper>
-        );
-    })}
   </div>
   );
 }
@@ -46,13 +53,22 @@ min-height: 12rem;
 border-radius: 2rem;
 overflow: hidden;
 
+
 img{
     border-radius: 2rem;
+    height: 15rem;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
+p{
+    font-size: 1rem;
+    font-weight: bold;
 
+}
 
 `;
 
 
-export default Popular;
+export default Popular; 
