@@ -46,19 +46,21 @@ const [popular, setPopular] = useState ([]);
 
 const Wrapper = styled.div`
 margin: 4rem 0rem;
+background-color: #e86100;
+
 `;
 
 const Card = styled.div`
-min-height: 12rem;
-border-radius: 2rem;
+min-height: 2rem;
+border-radius: 1rem;
 overflow: hidden;
 
 
 img{
     border-radius: 2rem;
-    height: 15rem;
+    height: 4rem;
     object-fit: cover;
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
