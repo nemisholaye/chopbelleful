@@ -64,7 +64,6 @@ background-color: #e86100;
 
 const Card = styled.div`
 min-height: 2rem;
-border-radius: 1rem;
 overflow: hidden;
 
 
@@ -77,6 +76,7 @@ img{
 }
 
 p{
+    margin: 1rem;
     font-size: 1rem;
     font-weight: bold;
 
