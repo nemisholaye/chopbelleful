@@ -1,45 +1,40 @@
-import {FaPizzaSlice, FaHamburger}  from 'react-icons/fa';
-import{GiNoodles, GiChopsticks} from 'react-icons/gi';
-import styled from 'styled-components';
+import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
+import { GiNoodles, GiChopsticks } from "react-icons/gi";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 function Category() {
-  return (
-    <List>
-    <CategoryItem>
-      <FaPizzaSlice />
-      <h4>South</h4>
-    </CategoryItem>
-    <CategoryItem>
-      <FaHamburger />
-      <h4>West</h4>
-    </CategoryItem>
-    <CategoryItem>
-      <GiNoodles />
-      <h4>East</h4>
-    </CategoryItem>
-    <CategoryItem>
-      <GiChopsticks />
-      <h4>North</h4>
-    </CategoryItem>
-  </List>
-);
-}
+    return (
+      <List>
 
-const List = styled.div`
-display: flex;
-justify-content: center;
-margin: 2rem 0;
-`;
+        <NavLink to={'/cuisine/South'}>
+          <FaPizzaSlice/>
+          <h4>South</h4>
+        </NavLink>
 
-const CategoryItem = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 0 1rem;
+        <NavLink to={'/cuisine/West'}>
+          <FaHamburger/>
+          <h4>West</h4>
+        </NavLink>
 
-h4 {
-  margin-top: 0.5rem;
-}
-`;
+        <NavLink to={'/cuisine/East'}>
+          <GiNoodles/>
+          <h4>East</h4>
+        </NavLink>
 
-export default Category
+        <NavLink to={'/cuisine/North'}>
+          <GiChopsticks/>
+          <h4>North</h4>
+        </NavLink>
+
+      </List>
+    );
+  }
+  
+  const List = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0rem;
+  
+  `;
+  export default Category;
