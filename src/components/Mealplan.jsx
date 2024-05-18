@@ -30,7 +30,7 @@ function Popular() {
   return (
     <div>
       <Wrapper>
-        <h3>Popular</h3>
+        <h3>Meal Plan</h3>
 
         <Splide
           options={{
