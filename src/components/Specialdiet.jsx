@@ -3,26 +3,26 @@ import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-function Popular() {
-  const [popular, setPopular] = useState([]);
+function Specialdiet() {
+  const [specialdiet, setSpecialdiet] = useState([]);
 
   useEffect(() => {
-    getPopular();
+    getSpecialdiet();
   }, []);
-  const getPopular = async () => {
-    const check = localStorage.getItem("popular");
+  const getSpecialdiet = async () => {
+    const check = localStorage.getItem("specialdiet");
 
     if (check) {
-      setPopular(JSON.parse(check));
+      setSpecialdiet(JSON.parse(check));
     } else {
       const api = await fetch(
         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=6`
       );
       const data = await api.json();
 
-      localStorage.setItem("popular", JSON.stringify(data.recipes));
+      localStorage.setItem("specialdiet", JSON.stringify(data.recipes));
 
-      setPopular(data.recipes);
+      setSpecialdiet(data.recipes);
       console.log(data.recipes);
     }
   };
@@ -30,7 +30,7 @@ function Popular() {
   return (
     <div>
       <Wrapper>
-        <h3>Popular</h3>
+        <h3>Special diet</h3>
 
         <Splide
           options={{
@@ -39,7 +39,7 @@ function Popular() {
             gap: "2rem",
           }}
         >
-          {popular.map((recipe) => {
+          {specialdiet.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
@@ -79,4 +79,4 @@ const Card = styled.div`
   }
 `;
 
-export default Popular;
+export default Specialdiet;
